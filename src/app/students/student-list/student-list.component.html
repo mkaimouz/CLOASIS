@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card card-theme">
+        <div class="card-header">
+          <h3 class="card-title">Students</h3>
+          
+          <div class="card-tools">
+            <div class="row">
+              <div class="col-xs-5">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-block btn-success btn-sm" style="padding-right: 20px;" routerLink="/add-student">Add Student</button>
+                </div>
+              </div>
+              <!-- <div class="col-md5">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+    
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                  </div>
+                </div>
+              </div> -->
+
+            </div>
+            
+          </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>IAN</th>
+                <th>Name</th>
+                <th>AUB ID</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of students">
+                <td>{{'bla'}}</td>
+                <td>{{student.id}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.studentId}}</td>
+                <td><a [href]=''>{{student.email}}</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+      <app-pagination
+            (goPage)="goToPage($event)"
+            (goPrev)="goToPrevious()"
+            (goNext)="goToNext()"
+            [page]="page"
+            [perPage]="limit"
+            [count]="total">
+      </app-pagination>
+    </div>
+  </div>
+  <!-- /.row -->

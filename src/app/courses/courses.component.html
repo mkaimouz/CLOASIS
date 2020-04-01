@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-5">
+        <app-course-list  (courseSelected)="selectedCourse = $event"></app-course-list>
+    </div>
+    <div class="col-md-7">
+        <app-course-detail *ngIf="selectedCourse; else elseStatement" [course]="selectedCourse"></app-course-detail>
+        <ng-template #elseStatement>
+            <h3>
+                Please Select a Course
+            </h3>
+        </ng-template>
+    </div>
+</div>

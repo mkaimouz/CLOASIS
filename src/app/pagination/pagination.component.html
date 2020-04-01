@@ -1,0 +1,31 @@
+<div class="pages">
+  
+    <div id="outer">
+        <button class=" fluid btn btn-xs btn-dark pull-left"
+        (click)="onPrev()" 
+        [disabled]="page === 1 || loading" 
+        [ngClass]="{ 'disabled': page === 1 || loading }">Prev</button>
+    
+
+        <div class = "fluid" id ="inner" style= "box-sizing: border-box;">
+            <button class="btn btn-xs btn-dark btn-pageNumber"
+            style="padding-left: 50px;"
+            *ngFor="let pageNum of getPages()" 
+            (click)="onPage(pageNum)" 
+            [ngClass]="{'active': pageNum === page, 'disabled': loading }">
+                {{ pageNum }}
+            </button>
+        </div>
+
+        
+        
+       
+      
+        <button class=" fluid btn btn-xs btn-dark pull-right" 
+        (click)="onNext()" 
+        [disabled]="isLastPage() || loading" 
+        [ngClass]="{ 'disabled': isLastPage() || loading }">Next Page</button>
+    </div>
+    
+
+  </div>
